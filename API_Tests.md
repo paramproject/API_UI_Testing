@@ -1,3 +1,6 @@
+"It's safe to share this API key, nothing will happen with the account..."
+
+
 1. Create Contact (403 Test)
 Description: Attempt to create a contact when the token does not have access to a location.
 Expected Result: 403 Forbidden
