@@ -1,0 +1,9 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "name": "John Doe",
+  "email": "doe@abcde.com",
+  "locationId": "xssO3ZCRcK4kzmtsEgiW",
+  "phone": "+1234567810",
+  "country": "US"
+}
