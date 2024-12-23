@@ -6,7 +6,7 @@ Method: POST
 URL: https://services.leadconnectorhq.com/contacts
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <invalid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Content-Type	Yes	Request payload format.	application/json
 Accept	Yes	Expected response format.	application/json
 Version	Yes	API version.	2021-07-28
@@ -30,11 +30,11 @@ Method: POST
 URL: https://services.leadconnectorhq.com/contacts
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Content-Type	Yes	Request payload format.	application/json
 Accept	Yes	Expected response format.	application/json
 Version	Yes	API version.	2021-07-28
-Body:
+Body (Malformed JSON):
 json
 Copy code
 {
@@ -55,7 +55,7 @@ Method: POST
 URL: https://services.leadconnectorhq.com/contacts
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Content-Type	Yes	Request payload format.	application/json
 Accept	Yes	Expected response format.	application/json
 Version	Yes	API version.	2021-07-28
@@ -73,9 +73,6 @@ Copy code
 
 
 
-
-
-
 4. Get Contact (200 Test)
 Description: Retrieve a previously created contact.
 Expected Result: 200 OK
@@ -84,11 +81,10 @@ Method: GET
 URL: https://services.leadconnectorhq.com/contacts/{contactId}
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Accept	Yes	Expected response format.	application/json
 Body:
 No body is required.
-
 
 
 
@@ -101,13 +97,10 @@ Method: GET
 URL: https://services.leadconnectorhq.com/contacts/{invalidContactId}
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Accept	Yes	Expected response format.	application/json
 Body:
 No body is required.
-
-
-
 
 
 
@@ -121,7 +114,7 @@ Method: PUT
 URL: https://services.leadconnectorhq.com/contacts/{contactId}
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Content-Type	Yes	Request payload format.	application/json
 Body:
 json
@@ -135,6 +128,7 @@ Copy code
 
 
 
+
 7. Update Contact (422 Test)
 Description: Submit unprocessable data.
 Expected Result: 422 Unprocessable Entity
@@ -143,7 +137,7 @@ Method: PUT
 URL: https://services.leadconnectorhq.com/contacts/{contactId}
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Content-Type	Yes	Request payload format.	application/json
 Body:
 json
@@ -163,10 +157,6 @@ Method: DELETE
 URL: https://services.leadconnectorhq.com/contacts/{contactId}
 Headers:
 Header	Required	Description	Example
-Authorization	Yes	Bearer token for auth.	Bearer <valid-token>
+Authorization	Yes	Bearer token for auth.	Bearer pit-84ec65c2-b205-4967-8371-0ff3dbe3ae47
 Body:
 No body is required.
-
-
-
-"Fix empty API_Tests.md file"
