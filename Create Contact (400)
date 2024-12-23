@@ -1,0 +1,32 @@
+pm.test("Response status code is 400", function () {
+    pm.expect(pm.response.code).to.equal(400);
+});
+
+
+pm.test("Response has the required fields - message, error, and statusCode", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData).to.have.property('message');
+    pm.expect(responseData).to.have.property('error');
+    pm.expect(responseData).to.have.property('statusCode');
+});
+
+
+pm.test("Message is a non-empty string", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.message).to.be.a('string').and.to.have.lengthOf.at.least(1, "Message should not be empty");
+});
+
+
+pm.test("Error is a non-empty string", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.error).to.be.a('string').and.to.have.lengthOf.at.least(1, "Error should not be empty");
+});
+
+
+pm.test("Response time is in an acceptable range", function () {
+  pm.expect(pm.response.responseTime).to.be.within(50, 1000);
+});
